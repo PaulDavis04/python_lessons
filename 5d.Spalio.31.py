@@ -218,14 +218,12 @@ for i in range(6):
                 player_data = [column.text.strip() for column in columns]
                 data.append(player_data)
 
-    columns = ["Name","Price", "Charts", "Change" ,"Market cap", "Trade", "Volume (24)", "Suply"]
+    columns = ["Name", "Price", "Charts", "Change", "Market cap", "Volume (24)", "Suply", "Trade"]
 
 df = pd.DataFrame(data, columns = columns)
 
-df.to_csv("COINBASE.csv", index=False)
+df.to_csv("COINBASE231101.csv", index=False)
 
 
 print(df)
 # print(content_block)
-
-
