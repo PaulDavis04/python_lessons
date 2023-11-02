@@ -218,7 +218,7 @@ for i in range(6):
                 player_data = [column.text.strip() for column in columns]
                 data.append(player_data)
 
-    columns = ["Name", "Price", "Charts", "Change", "Market cap", "Volume (24)", "Suply", "Trade"]
+    columns = ["Name", "Price", "Charts", "Change", "Market cap", "Volume (24)", "Supply", "Trade"]
 
 df = pd.DataFrame(data, columns = columns)
 
