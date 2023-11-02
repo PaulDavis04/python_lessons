@@ -222,7 +222,7 @@ for i in range(6):
 
 df = pd.DataFrame(data, columns = columns)
 
-df.to_csv("COINBASE231101.csv", index=False)
+df.to_csv("COINBASE231102.csv", index=False)
 
 
 print(df)
