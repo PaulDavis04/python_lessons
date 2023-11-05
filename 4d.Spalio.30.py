@@ -40,7 +40,7 @@ import psycopg2
 #         port=5432,
 #         database="Aruodas",
 #         user="postgres",
-#         password="Litovic"
+#         password="L******"
 #         )
 #
 #     cursor = connection.cursor()

@@ -29,24 +29,24 @@ from bs4 import BeautifulSoup
 
 #####------------------------------------------------------
 
-# df = pd.read_csv("Sales_Records.csv")
-# df ["Profit"] = df["Total Revenue"] - df["Total Cost"]
-# # #
-# df["Profit"] = df["Profit"].round(2)
-#
-# # df.to_csv("Naujas sales_records.csv", index=False)  #suformuoja, sudaro nauja dokumenta
-#
-# # print("Bendras pelnas", df["Profit"].sum(),df["Total Revenue"].sum(), df["Total Cost"].sum())
-#
-# df["Order Date"] = pd.to_datetime(df["Order Date"])
-# df["Ship Date"] = pd.to_datetime(df["Ship Date"])
-# # df["Units Sold"] = df["Units Sold"].astype(int)
-#
-# df["Dienu skirtumas"] = (df["Ship Date"] - df["Order Date"]).dt.days
-#
-# # sort_profit = df.sort_values(by="Profit", ascending=False)
-# # print(sort_profit)
-# # print(df.isnull().sum())             #tikrina tuscius laukus
+df = pd.read_csv("Sales_Records.csv")
+df ["Profit"] = df["Total Revenue"] - df["Total Cost"]
+# #
+df["Profit"] = df["Profit"].round(2)
+
+# df.to_csv("Naujas sales_records.csv", index=False)  #suformuoja, sudaro nauja dokumenta
+
+# print("Bendras pelnas", df["Profit"].sum(),df["Total Revenue"].sum(), df["Total Cost"].sum())
+
+df["Order Date"] = pd.to_datetime(df["Order Date"])
+df["Ship Date"] = pd.to_datetime(df["Ship Date"])
+# df["Units Sold"] = df["Units Sold"].astype(int)
+
+df["Dienu skirtumas"] = (df["Ship Date"] - df["Order Date"]).dt.days
+
+sort_profit = df.sort_values(by="Profit", ascending=False)
+print(sort_profit)
+print(df.isnull().sum())             #tikrina tuscius laukus
 #
 # ####----------
 #
@@ -195,35 +195,35 @@ from bs4 import BeautifulSoup
 
 ###______EXPLORE THE CRYPTOECONOMY___________###########
 
-import requests
-
-data = []
-for i in range(6):
-    headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0"
-    }
-    url = f"https://www.coinbase.com/explore?page={i}"
-    res = requests.get(url, headers=headers)
-    soup = BeautifulSoup(res.content, "html.parser")
-
-
-
-    table = soup.find("table", class_="cds-table-top40r1")
-
-    if table:
-        rows = table.find_all("tr")
-        for row in rows:
-            columns = row.find_all("td")
-            if len(columns) >= 8:
-                player_data = [column.text.strip() for column in columns]
-                data.append(player_data)
-
-    columns = ["Name", "Price", "Charts", "Change", "Market cap", "Volume (24)", "Supply", "Trade"]
-
-df = pd.DataFrame(data, columns = columns)
-
-df.to_csv("COINBASE231102.csv", index=False)
-
-
-print(df)
+# import requests
+#
+# data = []
+# for i in range(6):
+#     headers = {
+#     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0"
+#     }
+#     url = f"https://www.coinbase.com/explore?page={i}"
+#     res = requests.get(url, headers=headers)
+#     soup = BeautifulSoup(res.content, "html.parser")
+#
+#
+#
+#     table = soup.find("table", class_="cds-table-top40r1")
+#
+#     if table:
+#         rows = table.find_all("tr")
+#         for row in rows:
+#             columns = row.find_all("td")
+#             if len(columns) >= 8:
+#                 player_data = [column.text.strip() for column in columns]
+#                 data.append(player_data)
+#
+#     columns = ["Name", "Price", "Charts", "Change", "Market cap", "Volume (24)", "Supply", "Trade"]
+#
+# df = pd.DataFrame(data, columns = columns)
+#
+# df.to_csv("COINBASE231102.csv", index=False)
+#
+#
+# print(df)
 # print(content_block)
