@@ -41,9 +41,14 @@ def imdb_scraper():
     }
 
     df = pd.DataFrame(data)
-    dfs = df
-    print(dfs)
-    return pavadinimas
+    df1 = df
+    # print(df1)
 
-    print(response.status_code)
+def df1():
+    return None
+
+    # return pavadinimas
+
+    # print(response.status_code)
 imdb_scraper()
+

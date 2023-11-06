@@ -29,24 +29,24 @@ from bs4 import BeautifulSoup
 
 #####------------------------------------------------------
 
-df = pd.read_csv("Sales_Records.csv")
-df ["Profit"] = df["Total Revenue"] - df["Total Cost"]
-# #
-df["Profit"] = df["Profit"].round(2)
-
-# df.to_csv("Naujas sales_records.csv", index=False)  #suformuoja, sudaro nauja dokumenta
-
-# print("Bendras pelnas", df["Profit"].sum(),df["Total Revenue"].sum(), df["Total Cost"].sum())
-
-df["Order Date"] = pd.to_datetime(df["Order Date"])
-df["Ship Date"] = pd.to_datetime(df["Ship Date"])
-# df["Units Sold"] = df["Units Sold"].astype(int)
-
-df["Dienu skirtumas"] = (df["Ship Date"] - df["Order Date"]).dt.days
-
-sort_profit = df.sort_values(by="Profit", ascending=False)
-print(sort_profit)
-print(df.isnull().sum())             #tikrina tuscius laukus
+# df = pd.read_csv("Sales_Records.csv")
+# df ["Profit"] = df["Total Revenue"] - df["Total Cost"]
+# # #
+# df["Profit"] = df["Profit"].round(2)
+#
+# # df.to_csv("Naujas sales_records.csv", index=False)  #suformuoja, sudaro nauja dokumenta
+#
+# # print("Bendras pelnas", df["Profit"].sum(),df["Total Revenue"].sum(), df["Total Cost"].sum())
+#
+# df["Order Date"] = pd.to_datetime(df["Order Date"])
+# df["Ship Date"] = pd.to_datetime(df["Ship Date"])
+# # df["Units Sold"] = df["Units Sold"].astype(int)
+#
+# df["Dienu skirtumas"] = (df["Ship Date"] - df["Order Date"]).dt.days
+#
+# sort_profit = df.sort_values(by="Profit", ascending=False)
+# print(sort_profit)
+# print(df.isnull().sum())             #tikrina tuscius laukus
 #
 # ####----------
 #
